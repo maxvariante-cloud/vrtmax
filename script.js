@@ -6,7 +6,7 @@
 
   /* ---- Configuração do WhatsApp (edite aqui) ---- */
   const phoneNumber = "5511995935810";
-  const message = "Olá! Vim pelo site e quero solicitar um orçamento para ar-condicionado.";
+  const message = "Olá! Vim pelo site e quero solicitar um orçamento.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -115,8 +115,11 @@
     },
     { threshold: 0.14 }
   );
-  document.querySelectorAll(".reveal").forEach((el, i) => {
-    el.style.transitionDelay = `${Math.min(i * 45, 180)}ms`;
+  // cascata clean: cada item surge em sequência dentro do seu próprio grupo
+  document.querySelectorAll(".reveal").forEach((el) => {
+    const group = Array.from(el.parentElement.children).filter((c) => c.classList.contains("reveal"));
+    const idx = Math.max(0, group.indexOf(el));
+    el.style.transitionDelay = `${Math.min(idx * 90, 360)}ms`;
     revealObserver.observe(el);
   });
   // contadores dentro do hero (que aparecem de imediato)
