@@ -17,13 +17,18 @@
     link.rel = "noopener";
   });
 
-  /* ---- Preloader ---- */
+  /* ---- Preloader (carregando por 3 segundos) ---- */
   const preloader = document.getElementById("preloader");
+  const PRELOADER_MS = 3000;
+  const start = performance.now();
+  const hidePreloader = () => preloader && preloader.classList.add("done");
+  // espera o carregamento, mas mantém pelo menos 3 segundos de tela
   window.addEventListener("load", () => {
-    setTimeout(() => preloader && preloader.classList.add("done"), 350);
+    const elapsed = performance.now() - start;
+    setTimeout(hidePreloader, Math.max(0, PRELOADER_MS - elapsed));
   });
-  // fallback caso "load" demore
-  setTimeout(() => preloader && preloader.classList.add("done"), 2500);
+  // fallback: some mesmo se o evento "load" não disparar
+  setTimeout(hidePreloader, PRELOADER_MS + 600);
 
   /* ---- Ano no rodapé ---- */
   const yearEl = document.getElementById("year");
