@@ -151,6 +151,10 @@
     const before = document.getElementById("baBefore");
     const handle = document.getElementById("baHandle");
     let dragging = false;
+    // mantém a imagem "antes" na largura total do slider (alinhada com a "depois")
+    const syncWidth = () => slider.style.setProperty("--ba-w", slider.clientWidth + "px");
+    syncWidth();
+    window.addEventListener("resize", syncWidth);
     const setPos = (clientX) => {
       const r = slider.getBoundingClientRect();
       let pct = ((clientX - r.left) / r.width) * 100;
