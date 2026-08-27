@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VRT Climatização | Instalação e Manutenção de Ar-Condicionado em São Paulo</title>
+  <meta name="description" content="Instalação, manutenção e higienização de ar-condicionado com atendimento rápido, garantia e orçamento grátis pelo WhatsApp. Residencial e industrial em São Paulo e região.">
+  <meta name="theme-color" content="#061c3b">
+  <meta property="og:title" content="VRT Climatização">
+  <meta property="og:description" content="Especialistas em instalação, manutenção e limpeza de ar-condicionado. Orçamento grátis pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="apple-touch-icon" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ===== Preloader ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-logo">
+      <span class="preloader-fan"></span>
+      <strong>VRT</strong>
+    </div>
+    <span class="preloader-bar"><i></i></span>
+  </div>
+
+  <!-- ===== Progresso de scroll ===== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#servicos">Pular para o conteúdo</a>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="VRT Climatização — início">
+      <img src="assets/logo.jpg" onerror="this.onerror=null;this.src='assets/logo.svg'" alt="Logo VRT Climatização" width="74" height="44">
+      <span>
+        <strong>VRT Climatização</strong>
+        <small>Especialistas em ar-condicionado</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+
+    <a class="header-cta magnetic" data-whatsapp href="#">Orçamento grátis</a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ===== Menu mobile ===== -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+    <a href="#servicos">Serviços</a>
+    <a href="#processo">Como funciona</a>
+    <a href="#marcas">Marcas</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="#faq">Dúvidas</a>
+    <a class="mobile-cta" data-whatsapp href="#">Pedir orçamento no WhatsApp</a>
+  </nav>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="hero-noise" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="region-pill">São Paulo e região • Atendimento residencial e industrial</p>
+          <h1>Seu ar-condicionado instalado por especialistas com <span>garantia</span> e atendimento no mesmo dia.</h1>
+          <p class="lead">Instalação, manutenção e higienização profissional para quem quer conforto, economia na conta de luz e um serviço bem feito desde o primeiro contato.</p>
+
+          <p class="budget-note">Orçamento sem compromisso • Resposta rápida pelo WhatsApp</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary magnetic" data-whatsapp href="#">Pedir orçamento grátis</a>
+            <a class="btn btn-outline btn-services" href="#servicos">Conhecer nossos serviços</a>
+          </div>
+
+          <div class="trust-list" aria-label="Diferenciais">
+            <span><b data-count="4.9" data-decimals="1">0</b> estrelas • +100 avaliações</span>
+            <span>Orçamento gratuito</span>
+            <span>Técnicos especializados</span>
+            <span>Garantia no serviço</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-photo">
+            <img src="assets/ads-profissional.png" alt="Técnico da VRT Climatização realizando manutenção em ar-condicionado split"
+                 onerror="this.style.display='none';this.closest('.hero-photo').classList.add('no-img')" loading="eager">
+            <div class="photo-fallback" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="64" height="64" fill="none"><rect x="3" y="6" width="18" height="7" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M7 16c1 2 2 2 3 4M12 16c1 2 2 2 3 4M17 16c1 2 2 2 3 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span>VRT Climatização</span>
+            </div>
+            <div class="photo-badge">Equipe VRT em atendimento</div>
+          </div>
+
+          <div class="floating-card floating-card--response">
+            <strong><i aria-hidden="true"></i>Resposta rápida</strong>
+            <span>Fale com um especialista pelo WhatsApp</span>
+          </div>
+
+          <div class="floating-card floating-card--rating" aria-label="Nota dos clientes">
+            <strong>4,9 ★</strong>
+            <span>+100 clientes satisfeitos</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#marcas" aria-label="Rolar para baixo">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===== Marcas ===== -->
+    <section class="brand-strip" id="marcas" aria-label="Marcas atendidas">
+      <p>Trabalhamos com todas as marcas</p>
+      <div class="brand-marquee">
+        <div class="brand-track">
+          <span>Midea</span><span>LG</span><span>Samsung</span><span>Elgin</span><span>Springer</span><span>Daikin</span><span>Fujitsu</span><span>Gree</span><span>Philco</span><span>Consul</span>
+          <span>Midea</span><span>LG</span><span>Samsung</span><span>Elgin</span><span>Springer</span><span>Daikin</span><span>Fujitsu</span><span>Gree</span><span>Philco</span><span>Consul</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Indicadores ===== -->
+    <section class="performance-panel" aria-label="Indicadores de atendimento">
+      <div class="container performance-grid reveal">
+        <div class="performance-copy">
+          <p class="eyebrow">Atendimento com padrão técnico</p>
+          <h2>Números que ajudam você a decidir com segurança.</h2>
+          <p>Além de executar o serviço, orientamos o cliente sobre manutenção, economia e cuidados para preservar o equipamento por muito mais tempo.</p>
+          <a class="text-cta magnetic" data-whatsapp href="#">Quero falar com a VRT</a>
+        </div>
+
+        <div class="chart-card">
+          <div class="ring-chart" style="--value: 95">
+            <strong data-count="95">0%</strong>
+          </div>
+          <span>Clientes retornam ou indicam</span>
+        </div>
+
+        <div class="bars-card">
+          <div class="bar-row"><span>Resposta via WhatsApp</span><strong data-count="100">0%</strong><i style="--bar: 100%"></i></div>
+          <div class="bar-row"><span>Serviço com garantia</span><strong data-count="100">0%</strong><i style="--bar: 100%"></i></div>
+          <div class="bar-row"><span>Manutenção preventiva</span><strong data-count="98">0%</strong><i style="--bar: 98%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Serviços ===== -->
+    <section class="section services-section" id="servicos">
+      <div class="container">
+        <div class="section-title center reveal">
+          <p class="eyebrow">Nossos serviços</p>
+          <h2>A solução completa para o seu conforto.</h2>
+          <p>Do planejamento à entrega final, cuidamos do equipamento com padrão técnico e comunicação clara.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service featured reveal">
+            <span class="badge">Mais pedido</span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="8" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 9h8M16 9h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 16c1 2 2 2 3 4M14 16c1 2 2 2 3 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Instalação de Ar-Condicionado</h3>
+            <p>Instalação segura, limpa e bem dimensionada para preservar a garantia e o desempenho do equipamento.</p>
+            <a class="service-link" data-whatsapp href="#">Pedir orçamento →</a>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M4.2 7l2.1 2.1M17.7 14.9l2.1 2.1M3 12h3M18 12h3M4.2 17l2.1-2.1M17.7 9.1l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            <h3>Manutenção Preventiva</h3>
+            <p>Revisão periódica para evitar falhas, vazamentos, ruídos e perda de eficiência.</p>
+            <a class="service-link" data-whatsapp href="#">Pedir orçamento →</a>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="m14.5 5.5 4 4M4 20l1-4 9.5-9.5 3 3L8 19l-4 1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Manutenção Corretiva</h3>
+            <p>Diagnóstico direto ao ponto para recuperar o equipamento com agilidade.</p>
+            <a class="service-link" data-whatsapp href="#">Pedir orçamento →</a>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c2.5 3 5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 2.5-6 5-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Limpeza e Higienização</h3>
+            <p>Remoção de sujeira, fungos e resíduos para melhorar o ar que a sua família respira.</p>
+            <a class="service-link" data-whatsapp href="#">Pedir orçamento →</a>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 8 9 19l-5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Recarga de Gás</h3>
+            <p>Avaliação técnica, teste de vazamento e reposição de gás quando necessário.</p>
+            <a class="service-link" data-whatsapp href="#">Pedir orçamento →</a>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 21V9l6-4 6 4v12M15 21V11l6-2v12M3 21h18M7 13h2M7 17h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Residencial e Industrial</h3>
+            <p>Atendimento para casas, apartamentos, lojas, galpões, fábricas e ambientes industriais.</p>
+            <a class="service-link" data-whatsapp href="#">Pedir orçamento →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Como funciona ===== -->
+    <section class="section process" id="processo">
+      <div class="container">
+        <div class="section-title center reveal">
+          <p class="eyebrow">Simples do início ao fim</p>
+          <h2>Como funciona o atendimento.</h2>
+          <p>Sem burocracia e sem surpresa: você fala com a gente e resolve.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal"><span class="step-num">1</span><h3>Você chama no WhatsApp</h3><p>Conte o que precisa e envie uma foto do ambiente ou do equipamento.</p></li>
+          <li class="step reveal"><span class="step-num">2</span><h3>Recebe o orçamento</h3><p>Passamos uma estimativa clara, sem compromisso e sem pegadinha.</p></li>
+          <li class="step reveal"><span class="step-num">3</span><h3>Agendamos a visita</h3><p>Escolhemos o melhor horário e nossa equipe vai até você.</p></li>
+          <li class="step reveal"><span class="step-num">4</span><h3>Serviço com garantia</h3><p>Executamos com padrão técnico e deixamos tudo limpo e funcionando.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Antes e depois ===== -->
+    <section class="section beforeafter-section">
+      <div class="container">
+        <div class="section-title center reveal">
+          <p class="eyebrow">Higienização profissional</p>
+          <h2>Veja a diferença de um ar limpo de verdade.</h2>
+          <p>Arraste para comparar o antes e o depois da nossa higienização.</p>
+        </div>
+
+        <div class="ba-wrap reveal">
+          <div class="ba-slider" id="baSlider" role="group" aria-label="Comparação antes e depois">
+            <img class="ba-after" src="assets/depois.jpg" onerror="this.classList.add('ph-after')" alt="Ar-condicionado após a higienização, limpo" draggable="false">
+            <div class="ba-before" id="baBefore">
+              <img src="assets/antes.jpg" onerror="this.classList.add('ph-before')" alt="Ar-condicionado antes da higienização, sujo" draggable="false">
+              <span class="ba-tag ba-tag--before">Antes</span>
+            </div>
+            <span class="ba-tag ba-tag--after">Depois</span>
+            <div class="ba-handle" id="baHandle" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Comparar antes e depois">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Benefícios ===== -->
+    <section class="section benefits">
+      <div class="container benefits-grid">
+        <div class="benefit-copy reveal">
+          <p class="eyebrow">Por que fazer agora</p>
+          <h2>Evite consumo alto, mau cheiro e paradas inesperadas.</h2>
+          <p>Ar-condicionado sem manutenção gasta mais energia, perde potência e compromete a qualidade do ar. Uma avaliação rápida agora evita um problema caro depois.</p>
+          <div class="urgency-mini">
+            <strong>Atenção:</strong>
+            <span>manutenção atrasada aumenta o consumo e reduz a vida útil do equipamento.</span>
+          </div>
+          <a class="text-cta magnetic" data-whatsapp href="#">Quero uma avaliação gratuita</a>
+        </div>
+        <div class="benefit-list reveal">
+          <div><strong>Economia na conta de luz</strong><span>Equipamento limpo e regulado trabalha melhor e gasta menos.</span></div>
+          <div><strong>Maior durabilidade</strong><span>A prevenção reduz o desgaste e o custo com trocas.</span></div>
+          <div><strong>Ar mais saudável</strong><span>Higienização remove fungos, ácaros e odores.</span></div>
+          <div><strong>Atendimento rápido</strong><span>Orçamento e agenda direto pelo WhatsApp.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Prova social ===== -->
+    <section class="section proof" id="avaliacoes">
+      <div class="container proof-grid">
+        <div class="proof-copy reveal">
+          <p class="eyebrow">Confiança</p>
+          <h2>Atendimento com presença profissional do começo ao fim.</h2>
+          <div class="metrics">
+            <div><strong><span data-count="1000">0</span>+</strong><span>atendimentos realizados</span></div>
+            <div><strong><span data-count="95">0</span>%</strong><span>clientes retornam</span></div>
+            <div><strong>5★</strong><span>nas avaliações</span></div>
+          </div>
+        </div>
+
+        <div class="reviews">
+          <article class="review reveal">
+            <span class="stars">★★★★★</span>
+            <p>“Instalação muito bem feita, atendimento rápido e deixaram tudo organizado.”</p>
+            <strong>Marina Lopes</strong>
+          </article>
+          <article class="review reveal">
+            <span class="stars">★★★★★</span>
+            <p>“Resolveram o ar da minha loja no mesmo dia. Comunicação excelente.”</p>
+            <strong>Rafael Almeida</strong>
+          </article>
+          <article class="review reveal">
+            <span class="stars">★★★★★</span>
+            <p>“Preço justo e serviço impecável. Já indiquei para toda a família.”</p>
+            <strong>Camila Nunes</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Garantia ===== -->
+    <section class="section guarantee">
+      <div class="container guarantee-card reveal">
+        <div class="seal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="guarantee-text">
+          <h2>Serviço com garantia e responsabilidade técnica.</h2>
+          <p>Se algo não sair como combinado, a VRT volta e resolve. Trabalho bem feito é compromisso, não promessa.</p>
+        </div>
+        <a class="btn btn-primary magnetic" data-whatsapp href="#">Falar com a VRT</a>
+      </div>
+    </section>
+
+    <!-- ===== CTA intermediário ===== -->
+    <section class="cta-band">
+      <div class="container cta-box reveal">
+        <div>
+          <p class="eyebrow">Condição especial</p>
+          <h2>Não espere seu equipamento parar de funcionar.</h2>
+          <p>Solicite agora uma avaliação gratuita e receba a orientação de um especialista.</p>
+        </div>
+        <a class="btn btn-primary magnetic" data-whatsapp href="#">Falar com um especialista</a>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section faq" id="faq">
+      <div class="container faq-grid">
+        <div class="section-title reveal">
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2>Antes de solicitar seu orçamento.</h2>
+          <div class="faq-support">
+            <strong>Precisa de uma resposta rápida?</strong>
+            <span>Chame no WhatsApp e fale direto com a equipe VRT.</span>
+            <a data-whatsapp href="#">Tirar dúvida agora</a>
+          </div>
+        </div>
+        <div class="faq-list reveal">
+          <details open>
+            <summary>Quanto custa a instalação?</summary>
+            <p>Depende do modelo, do local, da estrutura e da distância da tubulação. Envie uma mensagem no WhatsApp com uma foto do ambiente para receber uma estimativa.</p>
+          </details>
+          <details>
+            <summary>Vocês atendem minha região?</summary>
+            <p>Atendemos São Paulo e região. Informe seu bairro ou cidade para confirmarmos a disponibilidade de agenda.</p>
+          </details>
+          <details>
+            <summary>Quanto tempo demora o serviço?</summary>
+            <p>Muitos serviços são concluídos no mesmo dia. Casos mais complexos passam por uma avaliação técnica antes.</p>
+          </details>
+          <details>
+            <summary>Existe garantia?</summary>
+            <p>Sim. Os serviços contam com garantia e orientação para preservar o equipamento por mais tempo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA final ===== -->
+    <section class="final-cta">
+      <div class="container final-card reveal">
+        <div class="final-glow" aria-hidden="true"></div>
+        <p class="final-badge">Orçamento rápido e sem compromisso</p>
+        <h2>Receba seu orçamento em poucos minutos.</h2>
+        <p>Fale direto com um especialista da VRT e agende uma avaliação profissional para instalação, manutenção ou higienização.</p>
+        <div class="final-highlights" aria-label="Vantagens do atendimento">
+          <span>Resposta rápida</span>
+          <span>Garantia no serviço</span>
+          <span>Equipe especializada</span>
+        </div>
+        <a class="btn btn-primary final-button magnetic" data-whatsapp href="#">Solicitar orçamento no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand--footer">
+          <img src="assets/logo.jpg" onerror="this.onerror=null;this.src='assets/logo.svg'" alt="VRT Climatização" width="64" height="40">
+          <span><strong>VRT Climatização</strong><small>Especialistas em ar-condicionado</small></span>
+        </div>
+        <p class="footer-desc">Instalação, manutenção e higienização de ar-condicionado. Atendimento residencial e industrial em São Paulo e região.</p>
+      </div>
+      <div class="footer-contact">
+        <strong>Fale com a gente</strong>
+        <a data-whatsapp href="#">WhatsApp: (11) 99593-5810</a>
+        <span>Seg. a Sáb. • Atendimento rápido</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> VRT Climatização. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+  <!-- ===== WhatsApp flutuante ===== -->
+  <a class="floating-whatsapp magnetic" data-whatsapp href="#" aria-label="Solicitar orçamento no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.6-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.5.2.5.4.1.2.1.7-.1 1.1Z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <!-- ===== Barra CTA fixa mobile ===== -->
+  <div class="mobile-bar" aria-hidden="false">
+    <a class="mobile-bar-btn" data-whatsapp href="#">Pedir orçamento grátis no WhatsApp</a>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

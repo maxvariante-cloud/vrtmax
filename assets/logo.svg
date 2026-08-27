@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 120" role="img" aria-label="VRT">
+  <defs>
+    <linearGradient id="vrt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff8a1a"/>
+      <stop offset="0.55" stop-color="#ff5a17"/>
+      <stop offset="1" stop-color="#d51f28"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#vrt)">
+    <!-- V -->
+    <path d="M6 24h16l12 44 12-44h16L46 96H26L6 24Z"/>
+    <!-- R -->
+    <path d="M62 24h34c14 0 22 8 22 20 0 9-4 15-12 18l14 34H98l-11-30h-9v30H62V24Zm16 14v16h14c5 0 8-3 8-8s-3-8-8-8H78Z"/>
+    <!-- T -->
+    <path d="M104 24h34v14h-9v58h-16V38h-9V24Z" opacity="0.92"/>
+  </g>
+</svg>

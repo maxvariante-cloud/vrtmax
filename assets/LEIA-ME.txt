@@ -1,0 +1,23 @@
+PASTA ASSETS — VRT CLIMATIZAÇÃO
+================================
+
+O site já funciona sem nenhuma imagem sua (usa o logo vetorial "logo.svg"
+e placeholders). Mas para ficar profissional de verdade, coloque AQUI dentro
+os seguintes arquivos, com EXATAMENTE estes nomes:
+
+1) logo.jpg
+   -> Seu logo oficial da VRT (o que aparece no cabeçalho e no rodapé).
+   -> Se não existir, o site usa automaticamente o "logo.svg" que já criei.
+
+2) ads-profissional.png
+   -> A foto do técnico instalando/fazendo manutenção no ar-condicionado
+      (aquela imagem grande do lado direito do topo / hero).
+   -> Se não existir, aparece um placeholder elegante no lugar.
+
+3) antes.jpg   e   depois.jpg   (opcional, mas recomendado)
+   -> Fotos do MESMO ar-condicionado sujo (antes) e limpo (depois),
+      para o comparador interativo "arraste para comparar".
+   -> Se não existir, o comparador mostra dois blocos de cor de exemplo.
+
+DICA: use imagens em boa resolução (largura mínima ~1200px) e otimizadas
+(salve como JPG com qualidade ~80% ou PNG) para o site carregar rápido.
