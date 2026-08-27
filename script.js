@@ -17,18 +17,28 @@
     link.rel = "noopener";
   });
 
-  /* ---- Preloader (carregando por 3 segundos) ---- */
+  /* ---- Preloader: carregando por 3 segundos (animado via JS) ---- */
   const preloader = document.getElementById("preloader");
-  const PRELOADER_MS = 3000;
-  const start = performance.now();
-  const hidePreloader = () => preloader && preloader.classList.add("done");
-  // espera o carregamento, mas mantém pelo menos 3 segundos de tela
-  window.addEventListener("load", () => {
-    const elapsed = performance.now() - start;
-    setTimeout(hidePreloader, Math.max(0, PRELOADER_MS - elapsed));
-  });
-  // fallback: some mesmo se o evento "load" não disparar
-  setTimeout(hidePreloader, PRELOADER_MS + 600);
+  if (preloader) {
+    const bar = preloader.querySelector(".preloader-bar i");
+    const fan = preloader.querySelector(".preloader-fan");
+    const DURATION = 3000;
+    const t0 = performance.now();
+    const hidePreloader = () => preloader.classList.add("done");
+
+    const step = (now) => {
+      const p = Math.min((now - t0) / DURATION, 1);
+      const eased = 1 - Math.pow(1 - p, 3); // desacelera no fim
+      if (bar) bar.style.transform = "scaleX(" + eased + ")";
+      if (fan) fan.style.transform = "rotate(" + p * 1080 + "deg)"; // 3 voltas
+      if (p < 1) requestAnimationFrame(step);
+      else hidePreloader();
+    };
+    requestAnimationFrame(step);
+
+    // fallback de segurança, caso algo trave
+    setTimeout(hidePreloader, DURATION + 800);
+  }
 
   /* ---- Ano no rodapé ---- */
   const yearEl = document.getElementById("year");
