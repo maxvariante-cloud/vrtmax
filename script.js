@@ -256,14 +256,13 @@
   }
 
   /* =========================================================
-     Efeito de rolagem: parallax + rolagem suave com inÃ©rcia
+     Efeito de rolagem: parallax + rolagem suave com inércia
      ========================================================= */
 
   /* ---- Parallax: elementos se movem em velocidades diferentes ---- */
   const parallaxItems = Array.from(document.querySelectorAll("[data-parallax]")).map((el) => ({
     el,
     speed: parseFloat(el.dataset.parallax) || 0.12,
-    fade: el.hasAttribute("data-parallax-fade"),
   }));
 
   let parallaxQueued = false;
@@ -271,16 +270,13 @@
     parallaxQueued = false;
     if (reduceMotion || !parallaxItems.length) return;
     const vh = window.innerHeight;
-    const factor = window.innerWidth <= 980 ? 0.4 : 1; // mais discreto no celular
+    const wide = window.innerWidth > 980;
+    const factor = wide ? 1 : 0.4; // mais discreto no celular
     for (const item of parallaxItems) {
       const r = item.el.getBoundingClientRect();
-      if (r.bottom < -300 || r.top > vh + 300) continue; // fora da tela: nÃ£o calcula
+      if (r.bottom < -300 || r.top > vh + 300) continue; // fora da tela: não calcula
       const center = r.top + r.height / 2 - vh / 2;
       item.el.style.setProperty("--parallax-y", (-center * item.speed * factor).toFixed(1) + "px");
-      if (item.fade) {
-        const p = Math.min(Math.max(window.scrollY / (vh * 0.85), 0), 1);
-        item.el.style.setProperty("--parallax-o", (1 - p * 0.95).toFixed(3));
-      }
     }
   };
   const requestParallax = () => {
@@ -289,7 +285,7 @@
     requestAnimationFrame(updateParallax);
   };
 
-  /* ---- Rolagem suave com inÃ©rcia (sÃ³ no desktop com mouse) ---- */
+  /* ---- Rolagem suave com inércia (só no desktop com mouse) ---- */
   const smoothScrollOn =
     !reduceMotion &&
     window.matchMedia("(pointer: fine)").matches &&
@@ -338,7 +334,7 @@
       { passive: false }
     );
 
-    // rolagem vinda de outra origem (teclado, barra lateral, links Ã¢ncora)
+    // rolagem vinda de outra origem (teclado, barra lateral, links âncora)
     window.addEventListener(
       "scroll",
       () => {
@@ -353,7 +349,7 @@
       currentY = window.scrollY;
     });
 
-    // links Ã¢ncora deslizam com a mesma inÃ©rcia, jÃ¡ descontando o header
+    // links âncora deslizam com a mesma inércia, já descontando o header
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       const id = a.getAttribute("href");
       if (!id || id === "#") return;

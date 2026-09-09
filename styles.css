@@ -497,7 +497,6 @@ section[id], main > section { scroll-margin-top: 104px; }
   transform: translate3d(0, var(--parallax-y, 0px), 0);
   will-change: transform;
 }
-[data-parallax-fade] { opacity: var(--parallax-o, 1); }
 
 /* a foto do hero ganha um leve zoom para o parallax não abrir bordas */
 .hero-photo img[data-parallax] {
@@ -511,6 +510,5 @@ html.has-scrolled .scroll-cue { opacity: 0; transform: translateX(-50%) translat
 @media (prefers-reduced-motion: reduce) {
   [data-parallax] { transform: none; }
   .hero-photo img[data-parallax] { transform: none; }
-  [data-parallax-fade] { opacity: 1; }
   html.has-scrolled .scroll-cue { transform: translateX(-50%); }
 }
