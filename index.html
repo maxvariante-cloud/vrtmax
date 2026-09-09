@@ -70,10 +70,10 @@
     <!-- ===== HERO ===== -->
     <section class="hero" id="inicio">
       <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
-      <div class="hero-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="hero-aurora" aria-hidden="true" data-parallax="0.22"><i></i><i></i><i></i></div>
       <div class="hero-noise" aria-hidden="true"></div>
 
-      <div class="container hero-grid">
+      <div class="container hero-grid" data-parallax="0.08" data-parallax-fade>
         <div class="hero-copy reveal">
           <p class="region-pill">São Paulo e região • Atendimento residencial e industrial</p>
           <h1>Climatização, elétrica e limpeza pós-obra por especialistas, com <span>garantia</span> e agilidade.</h1>
@@ -96,7 +96,7 @@
 
         <div class="hero-visual reveal">
           <div class="hero-photo">
-            <img src="assets/ads-profissional.png" alt="Técnico da VRT Climatização realizando manutenção em ar-condicionado split"
+            <img src="assets/ads-profissional.png" data-parallax="0.05" alt="Técnico da VRT Climatização realizando manutenção em ar-condicionado split"
                  onerror="this.style.display='none';this.closest('.hero-photo').classList.add('no-img')" loading="eager">
             <div class="photo-fallback" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="64" height="64" fill="none"><rect x="3" y="6" width="18" height="7" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M7 16c1 2 2 2 3 4M12 16c1 2 2 2 3 4M17 16c1 2 2 2 3 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>

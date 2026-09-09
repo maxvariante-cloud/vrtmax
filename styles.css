@@ -487,3 +487,30 @@ details p { margin: 0; padding: 0 22px 22px 56px; color: var(--muted); animation
   .reveal { opacity: 1; transform: none; }
   .brand-track { animation: marquee 26s linear infinite !important; }
 }
+
+/* ============ Efeito de rolagem (parallax + inércia) ============ */
+/* quando a inércia por JS está ativa, o navegador não pode suavizar de novo */
+html.js-smooth-scroll { scroll-behavior: auto; }
+section[id], main > section { scroll-margin-top: 104px; }
+
+[data-parallax] {
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+  will-change: transform;
+}
+[data-parallax-fade] { opacity: var(--parallax-o, 1); }
+
+/* a foto do hero ganha um leve zoom para o parallax não abrir bordas */
+.hero-photo img[data-parallax] {
+  transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.14);
+}
+
+/* a setinha de "role para baixo" some assim que o usuário começa a rolar */
+.scroll-cue { transition: opacity .45s ease, transform .45s ease; }
+html.has-scrolled .scroll-cue { opacity: 0; transform: translateX(-50%) translateY(14px); pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax] { transform: none; }
+  .hero-photo img[data-parallax] { transform: none; }
+  [data-parallax-fade] { opacity: 1; }
+  html.has-scrolled .scroll-cue { transform: translateX(-50%); }
+}

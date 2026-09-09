@@ -50,13 +50,13 @@
   const onScroll = () => {
     const y = window.scrollY;
     header && header.classList.toggle("is-scrolled", y > 10);
+    document.documentElement.classList.toggle("has-scrolled", y > 60);
     if (progress) {
       const h = document.documentElement.scrollHeight - window.innerHeight;
       progress.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
     }
+    requestParallax();
   };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
 
   /* ---- Menu mobile ---- */
   const navToggle = document.getElementById("navToggle");
@@ -254,4 +254,122 @@
     });
     heroObs.observe(canvas);
   }
+
+  /* =========================================================
+     Efeito de rolagem: parallax + rolagem suave com inÃ©rcia
+     ========================================================= */
+
+  /* ---- Parallax: elementos se movem em velocidades diferentes ---- */
+  const parallaxItems = Array.from(document.querySelectorAll("[data-parallax]")).map((el) => ({
+    el,
+    speed: parseFloat(el.dataset.parallax) || 0.12,
+    fade: el.hasAttribute("data-parallax-fade"),
+  }));
+
+  let parallaxQueued = false;
+  const updateParallax = () => {
+    parallaxQueued = false;
+    if (reduceMotion || !parallaxItems.length) return;
+    const vh = window.innerHeight;
+    const factor = window.innerWidth <= 980 ? 0.4 : 1; // mais discreto no celular
+    for (const item of parallaxItems) {
+      const r = item.el.getBoundingClientRect();
+      if (r.bottom < -300 || r.top > vh + 300) continue; // fora da tela: nÃ£o calcula
+      const center = r.top + r.height / 2 - vh / 2;
+      item.el.style.setProperty("--parallax-y", (-center * item.speed * factor).toFixed(1) + "px");
+      if (item.fade) {
+        const p = Math.min(Math.max(window.scrollY / (vh * 0.85), 0), 1);
+        item.el.style.setProperty("--parallax-o", (1 - p * 0.95).toFixed(3));
+      }
+    }
+  };
+  const requestParallax = () => {
+    if (parallaxQueued) return;
+    parallaxQueued = true;
+    requestAnimationFrame(updateParallax);
+  };
+
+  /* ---- Rolagem suave com inÃ©rcia (sÃ³ no desktop com mouse) ---- */
+  const smoothScrollOn =
+    !reduceMotion &&
+    window.matchMedia("(pointer: fine)").matches &&
+    window.matchMedia("(min-width: 981px)").matches;
+
+  if (smoothScrollOn) {
+    document.documentElement.classList.add("js-smooth-scroll");
+
+    const EASE = 0.11;      // quanto menor, mais "deslizante"
+    const STRENGTH = 1.05;  // multiplicador do giro da rodinha
+    let targetY = window.scrollY;
+    let currentY = targetY;
+    let running = false;
+
+    const maxY = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const clampY = (v) => Math.max(0, Math.min(maxY(), v));
+
+    const loop = () => {
+      const diff = targetY - currentY;
+      if (Math.abs(diff) < 0.4) {
+        currentY = targetY;
+        window.scrollTo(0, currentY);
+        running = false;
+        return;
+      }
+      currentY += diff * EASE;
+      window.scrollTo(0, currentY);
+      requestAnimationFrame(loop);
+    };
+    const run = () => {
+      if (running) return;
+      running = true;
+      requestAnimationFrame(loop);
+    };
+
+    window.addEventListener(
+      "wheel",
+      (e) => {
+        if (e.ctrlKey || e.defaultPrevented) return; // zoom do navegador
+        if (mobileNav && mobileNav.classList.contains("open")) return;
+        e.preventDefault();
+        const unit = e.deltaMode === 1 ? 18 : e.deltaMode === 2 ? window.innerHeight : 1;
+        targetY = clampY(targetY + e.deltaY * unit * STRENGTH);
+        run();
+      },
+      { passive: false }
+    );
+
+    // rolagem vinda de outra origem (teclado, barra lateral, links Ã¢ncora)
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!running) {
+          currentY = targetY = window.scrollY;
+        }
+      },
+      { passive: true }
+    );
+    window.addEventListener("resize", () => {
+      targetY = clampY(targetY);
+      currentY = window.scrollY;
+    });
+
+    // links Ã¢ncora deslizam com a mesma inÃ©rcia, jÃ¡ descontando o header
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      const id = a.getAttribute("href");
+      if (!id || id === "#") return;
+      a.addEventListener("click", (e) => {
+        const dest = document.querySelector(id);
+        if (!dest) return;
+        e.preventDefault();
+        const offset = (header ? header.getBoundingClientRect().height + 28 : 0);
+        targetY = clampY(dest.getBoundingClientRect().top + window.scrollY - offset);
+        run();
+        history.replaceState(null, "", id);
+      });
+    });
+  }
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", requestParallax);
 })();
